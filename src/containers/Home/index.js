@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 import {connect} from 'react-redux';
 
 import HomePage from '../../components/Home';
@@ -10,9 +10,18 @@ import {
 
 
 const Home = () => {
+  const [titleText, setTitleText] = useState('This is home page');
+
+  const _changetitleText = () => (
+    setTitleText('Change title success')
+  )
+  
   return(
     <React.Fragment>
-      <HomePage title="This is home page" />
+      <HomePage
+        title={titleText}
+        changeTitleText={_changetitleText}
+      />
     </React.Fragment>
   );
 }
