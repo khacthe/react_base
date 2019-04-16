@@ -1,25 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import User from './user';
 
+const UserList = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+`;
+
 const Home = ({ users }: Props) => (
-  <table>
-    <tbody>
-      <tr>
-        <th> Name </th>
-        <th> Avatar Url </th>
-        <th> Github Url </th>
-      </tr>
-      { users && 
-        users.map(user => (
+  <UserList>
+    { users &&
+      users.map(user => (
           <User
             key={user.id}
             user={user}
           />
         ))
-      }
-    </tbody>
-  </table>
+    }
+  </UserList>
 );
 
 export default Home;

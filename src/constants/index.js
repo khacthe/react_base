@@ -20,4 +20,14 @@ export const ActionsTypes = keyMirror({
   GET_USERS_SUCCESS: undefined,
   GET_USERS_ERROR: undefined,
   GET_USERS_LOADING: undefined,
+
+  GET_USER_DETAIL: undefined,
+  GET_USER_DETAIL_SUCCESS: undefined,
+  GET_USER_DETAIL_ERROR: undefined,
+  GET_USER_DETAIL_LOADING: undefined,
+
+  GET_USER_REPOS: undefined,
+  GET_USER_REPOS_SUCCESS: undefined,
+  GET_USER_REPOS_ERROR: undefined,
+  GET_USER_REPOS_LOADING: undefined,
 });

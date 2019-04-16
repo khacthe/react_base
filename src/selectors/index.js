@@ -19,3 +19,11 @@ export const selectAbout = state => {
     ...rest,
   };
 };
+
+export const selectUserDetail = state => {
+  const { data, ...rest } = state.userDetailReducer;
+  return {
+    user: data,
+    ...rest,
+  };
+};
