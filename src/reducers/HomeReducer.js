@@ -1,19 +1,20 @@
 import { combineActions, handleActions } from 'redux-actions';
 
 import {
-  loadDataSuccess,
-  loadDataError,
-} from '../actions/homeAction';
+  getUsers,
+  getUsersSuccess,
+  getUsersError,
+} from '../actions/userAction';
 
 export const initialState = {
-  isLoadDataSuccess: false,
+  getUsersLoading: false,
   error: '',
 };
 
 const reducer = handleActions({
   [combineActions(
-    loadDataSuccess,
-    loadDataError
+    getUsersSuccess,
+    getUsersError
   )]: (state, action) => ({
     ...state, ...action.payload,
   }),

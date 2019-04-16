@@ -15,4 +15,9 @@ export const ActionsTypes = keyMirror({
   LOAD_CONTACT_SUCCESS: undefined,
   LOAD_CONTACT_ERROR: undefined,
   LOAD_CONTACT_LOADING: undefined,
+
+  GET_USERS: undefined,
+  GET_USERS_SUCCESS: undefined,
+  GET_USERS_ERROR: undefined,
+  GET_USERS_LOADING: undefined,
 });

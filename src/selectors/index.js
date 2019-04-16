@@ -1,6 +1,7 @@
-export const selectDatas = state => {
-  const { ...rest } = state.homeReducer;
+export const selectHome = state => {
+  const { data, ...rest } = state.homeReducer;
   return {
+    users: data,
     ...rest,
   };
 };
