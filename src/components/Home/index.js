@@ -1,9 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const Home = ({ title }: Props) => (
-  <React.Fragment>
-    <h2>{title}</h2>
-  </React.Fragment>
+import User from './user';
+
+const UserList = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+`;
+
+const Home = ({ users }: Props) => (
+  <UserList>
+    { users &&
+      users.map(user => (
+          <User
+            key={user.id}
+            user={user}
+          />
+        ))
+    }
+  </UserList>
 );
 
 export default Home;

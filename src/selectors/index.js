@@ -1,6 +1,7 @@
-export const selectDatas = state => {
-  const { ...rest } = state.homeReducer;
+export const selectHome = state => {
+  const { data, ...rest } = state.homeReducer;
   return {
+    users: data,
     ...rest,
   };
 };
@@ -15,6 +16,14 @@ export const selectContact = state => {
 export const selectAbout = state => {
   const { ...rest } = state.aboutReducer;
   return {
+    ...rest,
+  };
+};
+
+export const selectUserDetail = state => {
+  const { data, ...rest } = state.userDetailReducer;
+  return {
+    user: data,
     ...rest,
   };
 };

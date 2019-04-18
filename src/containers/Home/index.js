@@ -1,27 +1,36 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 import {connect} from 'react-redux';
 
 import HomePage from '../../components/Home';
-import { selectDatas } from '../../selectors';
+import { selectHome } from '../../selectors';
 import {
-  loadData,
-  loadDataSuccess,
-} from '../../actions/homeAction';
+  getUsers,
+  getUsersSuccess,
+} from '../../actions/userAction';
 
 
-const Home = () => {
+const Home = (props) => {
+  const [titleText, setTitleText] = useState('This is home page');
+
+  useEffect(() => {
+    const { getUsersAction } = props;
+    getUsersAction();
+  }, [])
+
   return(
     <React.Fragment>
-      <HomePage title="This is home page" />
+      <HomePage
+        users={props.users}
+      />
     </React.Fragment>
   );
 }
 
 
 export default connect(
-  selectDatas,
+  selectHome,
   {
-    loadDataAction: loadData,
-    loadDataSuccessAction: loadDataSuccess,
+    getUsersAction: getUsers,
+    getUsersSuccessAction: getUsersSuccess,
   }
 )(Home);

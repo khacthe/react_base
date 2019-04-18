@@ -10,6 +10,7 @@ import MainLayout from '../components/Layouts/MainLayout';
 import HomeComponent from '../containers/Home';
 import ContactComponent from '../containers/Contact';
 import AboutComponent from '../containers/About';
+import UserDetail from '../containers/UserDetail';
 
 
 const RouteRoot = () => (
@@ -39,6 +40,11 @@ const RouteRoot = () => (
           path='/about'
           layout={MainLayout}
           component={AboutComponent}
+        />
+        <RouteLayout
+          path='/users/:name'
+          layout={MainLayout}
+          component={UserDetail}
         />
       </Switch>
     </Router>
